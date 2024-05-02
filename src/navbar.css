@@ -1,0 +1,114 @@
+/* Reseteo de Margenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+Body{
+    background-color: #a2c1d7;
+}
+
+  /* Estilos para el header */
+
+Header{
+    background-color: #0c1218;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 100px;
+}
+
+.imgheader{
+    max-width: 200px;
+    cursor: help;
+}
+
+h1{
+    color: #4e84a9;
+    font-family: Oswald;
+    cursor: default;
+}
+
+.search-box{
+    background-color: #fff;
+    width: 155%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: 45px;
+    position: relative;
+    overflow: hidden;
+}
+
+.search-box input{
+    flex: 1;
+    padding: 15px 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 15px;
+    font-family: Roboto Condensed;
+}
+
+
+.search-box button{
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+}
+
+ul, li {
+    font-family: Oswald;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: #dfedee;
+    font-size: 20px;
+}
+
+a:hover{
+    color: #4e84a9;
+    transition: .5s;
+}
+
+.usuario {
+    display: flex;
+}
+
+.usuario p {
+    font-family: Roboto Condensed;
+    color: #fff;
+    font-size: 18px;
+    cursor: default;
+    padding: 1.2rem;
+}
+
+.carrito {
+    display: flex;
+    cursor: pointer;
+}
+
+.carrito p {
+    font-family: Roboto Condensed;
+    color: #fff;
+    font-size: 18px;
+    padding: 1.2rem;
+}
+
+.carrito p:hover {
+    color: #4e84a9;
+    transition: .5s;
+}
