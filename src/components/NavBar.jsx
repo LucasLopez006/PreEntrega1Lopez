@@ -16,7 +16,7 @@ const NavBar = () => {
     </div>  
     <nav>
         <ul>
-            <li><a href="pages/categorias.html">Categorias</a></li>
+            <li><a href="">Categorias</a></li>
             <li><a href="pages/ofertas.html">Ofertas</a></li>
         </ul>
     </nav>
