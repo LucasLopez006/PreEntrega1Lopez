@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import '/src/navbar.css'
+import '/src/styles/navbar.css'
 
 const NavBar = () => {
     return(
         <>
     
     <header>
-    <img src="/src/assets/RushLogo.png" alt="Logo de La empresa" class='imgheader'/>
+    <img src="/src/assets/RushLogos.png" alt="Logo de La empresa" class='imgheader'/>
     <h1>Inicio</h1>
     <div class="container">
         <form class="search-box">

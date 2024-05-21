@@ -6,13 +6,13 @@
 }
 
 Body{
-    background-color: #a2c1d7;
+    background-color: 	#fff;
 }
 
   /* Estilos para el header */
 
 Header{
-    background-color: #1e4468;
+    background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,10 +22,12 @@ Header{
 .imgheader{
     max-width: 200px;
     cursor: help;
+    padding-left: 20px;
+    padding-top: 25px;
 }
 
 h1{
-    color: #4e84a9;
+    color: #ffffff;
     font-family: Oswald;
     cursor: default;
 }
@@ -80,7 +82,7 @@ a {
 }
 
 a:hover{
-    color: #4e84a9;
+    color: #f55656;
     transition: .5s;
 }
 
@@ -109,6 +111,6 @@ a:hover{
 }
 
 .carrito p:hover {
-    color: #4e84a9;
+    color: #f55656;
     transition: .5s;
 }

@@ -1,0 +1,43 @@
+.card {
+    padding-top: 20px;
+    padding-left: 30px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 20px; 
+}
+
+.card-content{
+    position: relative;
+}
+
+.card-content::after{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    content: ' ';
+    width: 265px;
+    height: 428px;
+    filter: blur(5px);
+    background: black;
+    z-index: -1;
+}
+
+.card div {
+    border: solid 3px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Oswald;
+    background-color: #fff;
+    width: 266px; 
+}
+
+.card img {
+    width: 250px;
+    height: 250px;
+}
+
+.card p, .card h2 {
+    color: black;
+}
+
+
