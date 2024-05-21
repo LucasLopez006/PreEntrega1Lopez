@@ -103,6 +103,10 @@ a:hover{
     cursor: pointer;
 }
 
+.Carrito-widget{
+    padding-top: 10px;
+}
+
 .carrito p {
     font-family: Roboto Condensed;
     color: #fff;

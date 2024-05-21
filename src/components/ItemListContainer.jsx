@@ -7,6 +7,7 @@ const ItemListContainer = () => {
         <>
     
     <main>
+        <h2 className='articulos-title'>Todos nuestros artículos:</h2>
             <div  class='card' >
         <div class="card-content">
             <img src="src/assets/Ropas/buzo termico.jpg" alt="Buzo termico" />

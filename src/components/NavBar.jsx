@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '/src/styles/navbar.css'
+import CartWidget from './CartWidget'
 
 const NavBar = () => {
     return(
@@ -21,7 +22,7 @@ const NavBar = () => {
         </ul>
     </nav>
     <div class='carrito'>
-        <img src="/src/assets/cart.svg" alt="Carrito de compras" />
+        <CartWidget/>
         <p>Tu Carrito</p>
     </div>
     <div class='usuario'>

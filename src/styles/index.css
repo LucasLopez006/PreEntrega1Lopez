@@ -40,4 +40,10 @@
     color: black;
 }
 
-
+.articulos-title{
+    font-family: Roboto Condensed;
+    font-size: 2rem;
+    color: black;
+    padding-top: 32px;
+    text-align: center;
+}
