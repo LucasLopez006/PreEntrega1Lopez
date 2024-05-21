@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import '/src/styles/navbar.css'
 import CartWidget from './CartWidget'
+import ButtonComponent from "./buttoncomponents/ButtonComponent.jsx";
+
+
 
 const NavBar = () => {
     return(
@@ -17,8 +20,8 @@ const NavBar = () => {
     </div>  
     <nav>
         <ul>
-            <li><a href="">Categorias</a></li>
-            <li><a href="pages/ofertas.html">Ofertas</a></li>
+            <li><a href="">Ropa de Fútbol</a></li>
+            <li><a href="pages/ofertas.html">Ropa deportiva</a></li>
         </ul>
     </nav>
     <div class='carrito'>

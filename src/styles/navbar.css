@@ -71,6 +71,7 @@ nav ul {
 ul, li {
     font-family: Oswald;
     list-style: none;
+    padding-left: 15px;
 }
 
 a {
@@ -104,7 +105,7 @@ a:hover{
 }
 
 .Carrito-widget{
-    padding-top: 10px;
+    padding-top: 14px;
 }
 
 .carrito p {
