@@ -1,27 +1,33 @@
-import { useEffect, useState } from 'react'
-import { getProducts } from '../../asyncMock'
-import '/src/styles/index.css'
+import React, { useEffect, useState } from 'react';
+import { getProducts } from '../../asyncMock';
+import ProductCard from '../ProductCard';
+import '/src/styles/index.css';
 
-export default function ProductsComponent(){
-    const [products, setProducts]=useState( [] );
-    
-    
+export default function RopaComponent() {
+    const [products, setProducts] = useState([]);
+
     useEffect(() => {
-        getProducts().then(data => setProducts(data));
-    },[])
-    
-    return(<>
+        getProducts().then(data => {
+            const filteredProducts = data.filter(product => product.category === "Remeras de Fútbol");
+            setProducts(filteredProducts);
+        });
+    }, []);
+
+    return (
         <section>
-            <h2 className='articulos-title'>Prodcutos a la venta:</h2>
-            <article>
+            <h2 className='articulos-title'>Remeras de Fútbol:</h2>
+            <article className='card-container'>
                 {products.map(product => (
-                <ProductCard
-                title={product.title} 
-                price={product.price} 
-                image={product.image}/>))}
+                    <ProductCard
+                        key={product.id}
+                        title={product.title}
+                        price={product.price}
+                        description={product.description}
+                        image={product.image}
+                        stock={product.stock}
+                    />
+                ))}
             </article>
         </section>
-        
-    </>)
-
+    );
 }

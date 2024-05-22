@@ -20,16 +20,9 @@ Header{
 }
 
 .imgheader{
-    max-width: 200px;
     cursor: help;
     padding-left: 20px;
     padding-top: 25px;
-}
-
-h1{
-    color: #ffffff;
-    font-family: Oswald;
-    cursor: default;
 }
 
 .search-box{

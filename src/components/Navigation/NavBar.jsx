@@ -9,7 +9,7 @@ const NavBar = () => {
         <>
     
     <header>
-    <Link to ={'/'}><img src="/src/assets/RushLogos.png" alt="Logo de La empresa" className='imgheader'/></Link>
+    <Link to ={'/'}><img src="/src/assets/RushLogo.png" alt="Logo de La empresa" className='imgheader'/></Link>
     <div className="container">
         <form className="search-box">
             <input type="text" placeholder='Encuentra lo que buscas.'/>
