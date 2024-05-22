@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import '/src/styles/navbar.css'
-import CartWidget from './CartWidget'
-import ButtonComponent from "./buttoncomponents/ButtonComponent.jsx";
-
+import CartWidget from '../CartWidget.jsx'
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -10,25 +9,24 @@ const NavBar = () => {
         <>
     
     <header>
-    <img src="/src/assets/RushLogos.png" alt="Logo de La empresa" class='imgheader'/>
-    <h1>Inicio</h1>
-    <div class="container">
-        <form class="search-box">
+    <Link to ={'/'}><img src="/src/assets/RushLogos.png" alt="Logo de La empresa" className='imgheader'/></Link>
+    <div className="container">
+        <form className="search-box">
             <input type="text" placeholder='Encuentra lo que buscas.'/>
             <button type='submit'><img src="/src/assets/search.png" alt="Boton de busqueda" /></button>
         </form>
     </div>  
     <nav>
         <ul>
-            <li><a href="">Ropa de Fútbol</a></li>
-            <li><a href="pages/ofertas.html">Ropa deportiva</a></li>
+            <li><Link to ={'/Ropa_de_Futbol'}>Ropa de Fútbol</Link></li>
+            <li><Link to ={'/Ropa_Deportiva'}>Ropa deportiva</Link></li>
         </ul>
     </nav>
-    <div class='carrito'>
+    <div className='carrito'>
         <CartWidget/>
         <p>Tu Carrito</p>
     </div>
-    <div class='usuario'>
+    <div className='usuario'>
         <img src="/src/assets/user.svg" alt="User logo" />
         <p>Bienvenido, Usuario</p>
     </div>

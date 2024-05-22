@@ -7,7 +7,7 @@ const products = [
         price: "10U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "/Ropas",
+        "https://http2.mlstatic.com/D_NQ_NP_610368-MLU72582464075_102023-O.webp",
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const products = [
         price: "25|U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://http2.mlstatic.com/D_NQ_NP_973698-MLU70826059891_082023-O.webp",
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const products = [
         price: "50U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://http2.mlstatic.com/D_NQ_NP_945785-MLU73180118936_122023-O.webp",
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ const products = [
         price: "75U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://http2.mlstatic.com/D_NQ_NP_792039-MLU44311325378_122020-O.webp",
     },
 
     {
@@ -48,7 +48,7 @@ const products = [
         price: "100U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://http2.mlstatic.com/D_NQ_NP_767201-MLU53007378707_122022-O.webp",
     },
     {
         id: 6,
@@ -58,7 +58,7 @@ const products = [
         price: "80U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e9e8fc0f42384bd68640166b32292473_9366/Camiseta_Titular_River_Plate_23-24_Blanco_GC0418_01_laydown.jpg",
     },
     {
         id: 7,
@@ -68,7 +68,7 @@ const products = [
         price: "80U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/43b3d5dca79c4970ba7d510045536008_9366/Camiseta_Titular_Boca_Juniors_23-24_Azul_IV1922_01_laydown.jpg",
     },
     {
         id: 8,
@@ -78,7 +78,7 @@ const products = [
         price: "110U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://http2.mlstatic.com/D_NQ_NP_879093-MLU74366033797_022024-O.webp",
     },
     {
         id: 9,
@@ -88,7 +88,7 @@ const products = [
         price: "110U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://http2.mlstatic.com/D_NQ_NP_870268-MLU74251586602_022024-O.webp",
     },
     {
         id: 10,
@@ -98,7 +98,7 @@ const products = [
         price: "100U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://http2.mlstatic.com/D_NQ_NP_899119-MLU73181081859_112023-O.webp",
     },
     {
         id: 11,
@@ -108,7 +108,7 @@ const products = [
         price: "100U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://http2.mlstatic.com/D_NQ_NP_674817-MLU73933016934_012024-O.webp",
     },
     {
         id: 12,
@@ -118,7 +118,7 @@ const products = [
         price: "150U$D",
         description: "Tallas: XL, L, M, S, XS",
         image:
-        "",
+        "https://http2.mlstatic.com/D_NQ_NP_914733-MLU74533479550_022024-O.webp",
     },
 ];
 

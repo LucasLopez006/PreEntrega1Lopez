@@ -1,28 +1,13 @@
 .card {
     padding-top: 20px;
     padding-left: 30px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); 
     gap: 20px; 
 }
 
 .card-content{
-    position: relative;
-}
-
-.card-content::after{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    content: ' ';
-    width: 265px;
-    height: 428px;
-    z-index: -1;
-}
-
-.card div {
     border: solid .2px;
     border-radius: 5px;
+    padding-bottom: 10px;
     text-align: center;
     font-family: Oswald;
     background-color: #fff;
@@ -36,6 +21,18 @@
 
 .card p, .card h2 {
     color: black;
+}
+
+.card button {
+    padding: 5px;
+    border: solid .2px;
+    border-radius: 5px;
+}
+
+.card button:hover {
+    padding: 5px;
+    background-color: rgb(180, 175, 175);
+    transition: .5s;
 }
 
 .articulos-title{
