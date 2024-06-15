@@ -1,0 +1,160 @@
+.Carrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.CartTitle {
+    color: #343a40;
+    font-size: 2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 20px;
+}
+
+.CartProducts {
+    color: #6c757d;
+    font-size: 1.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+}
+
+.CartItem {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.ProductImage img {
+    width: 250px; 
+    height: 200px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.ProductDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductDetails h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #dc3545;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.ProductDetails .DetailName {
+    color: black;
+    margin-bottom: 5px;
+    font-family: Oswald, sans-serif;
+}
+
+.ProductDetails .DetailName:hover {
+    color: black;
+}
+
+.CartButton{
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Oswald;
+    max-width: 120px;
+    padding: 3px;
+}
+
+.CartButton:hover{
+    transition: .5s;
+    background-color: #940c1a;
+}
+
+.TotalPayment {
+    font-family: Oswald;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.FinalizarCompraButton {
+    background-color: #27a042;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.FinalizarCompraButton:hover {
+    transition: .5s;
+    background-color: #218838;
+}
+
+.CompraForm {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.CompraForm h3 {
+    color: #343a40;
+    font-size: 1.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 20px;
+}
+
+.CompraForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.CompraForm input[type="text"],
+.CompraForm input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.CompraForm .ErrorMessage {
+    color: #dc3545;
+    font-size: 0.9rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 5px;
+}
+
+.CompraForm .SubmitButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.CompraForm .SubmitButton:hover {
+    background-color: #0056b3;
+}

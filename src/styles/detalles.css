@@ -61,15 +61,50 @@ h1{
     background-color: #fff;
 }
 
-.Comprar-button{
-    padding: 7px;
-    border: solid .2px;
+
+.quantity-control {
+    margin-top: 10px;
+}
+
+.quantity-button {
+    background-color: #4CAF50; 
+    border: none;
     border-radius: 5px;
-    cursor: pointer;;
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
-.Comprar-button:hover{
-    background-color: rgb(202, 92, 92);
+.quantity-button:hover {
     transition: .5s;
+    background-color: #368639; 
+    
 }
 
+.quantity-display {
+    padding: 10px;
+}
+
+.Comprar-button {
+    background-color: #008CBA; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.Comprar-button:hover {
+    transition: .5s;
+    background-color: #005f75; 
+}
