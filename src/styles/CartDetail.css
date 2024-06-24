@@ -73,6 +73,7 @@
     font-family: Oswald;
     max-width: 120px;
     padding: 3px;
+    margin-right: 100px;
 }
 
 .CartButton:hover{
@@ -96,6 +97,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 10px;
+    margin-right: 50px;
 }
 
 .FinalizarCompraButton:hover {
@@ -157,4 +159,19 @@
 
 .CompraForm .SubmitButton:hover {
     background-color: #0056b3;
+}
+
+.ClearCartButton {
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ClearCartButton:hover {
+    transition: .5s;
+    background-color: #940c1a;
 }

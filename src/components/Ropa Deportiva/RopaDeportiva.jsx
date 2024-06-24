@@ -20,7 +20,6 @@ export default function RopaDeportiva(){
             <article className='card-container'>
                 {products.map(product => (
                     <ProductCard
-                        key={product.id}
                         title={product.title}
                         price={product.price}
                         description={product.description}

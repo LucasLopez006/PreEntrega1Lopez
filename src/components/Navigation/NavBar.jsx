@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react'
-import '/src/styles/navbar.css'
-import CartWidget from '../CartWidget.jsx'
+import { useState, useEffect, useContext } from 'react';
+import '/src/styles/navbar.css';
+import CartWidget from '../CartWidget.jsx';
 import { Link } from 'react-router-dom';
-import { searchProducts } from '../../asyncMock.js'; 
+import { searchProducts } from '../../asyncMock.js';
+import { CartContext } from '../CartContext.jsx';
 
 const NavBar = () => {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
+    const { cart } = useContext(CartContext);
 
     useEffect(() => {
         const handleSearch = async () => {
@@ -21,10 +23,12 @@ const NavBar = () => {
         handleSearch();
     }, [query]);
 
+    const totalItemsInCart = cart.reduce((total, item) => total + item.quantity, 0);
+
     return (
         <>
             <header>
-                <Link to='/'><img src="/src/assets/RushLogo.png" alt="Logo de La empresa" className='imgheader' /></Link>
+                <Link to='/'><img src="src/assets/RushLogo.png" alt="Logo de La empresa" className='imgheader'/></Link>
                 <div className="container">
                     <form className="search-box" onSubmit={(e) => e.preventDefault()}>
                         <input 
@@ -55,7 +59,12 @@ const NavBar = () => {
                     </ul>
                 </nav>
                 <div>
-                    <Link to='/Carrito'><div className='carrito'> <CartWidget /> <p>Tu Carrito</p> </div></Link>
+                    <Link to='/Carrito'>
+                        <div className='carrito'>
+                            <CartWidget />
+                            {totalItemsInCart > 0 && <span className='cart-count'>{totalItemsInCart}</span>}
+                        </div>
+                    </Link>
                 </div>
                 <div className='usuario'>
                     <img src="/src/assets/user.svg" alt="User logo" />
@@ -64,6 +73,6 @@ const NavBar = () => {
             </header>
         </>
     );
-}
+};
 
 export default NavBar;

@@ -6,7 +6,6 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
-    
     const calculateTotalPrice = (product) => {
         const price = parseFloat(product.price);
         const quantity = parseInt(product.quantity);
@@ -34,8 +33,12 @@ export const CartProvider = ({ children }) => {
         setCart((prevCart) => prevCart.filter((item) => item.id !== id));
     };
 
+    const clearCart = () => {
+        setCart([]);
+    };
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, calculateTotalPrice }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, calculateTotalPrice, clearCart }}>
             {children}
         </CartContext.Provider>
     );

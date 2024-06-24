@@ -5,7 +5,7 @@ import '../../styles/CartDetail.css';
 const Carrito = () => {
     const { cart, removeFromCart, calculateTotalPrice } = useContext(CartContext);
     const [showMessage, setShowMessage] = useState(false);
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(false); // Estado para controlar la visibilidad del formulario
     const [formData, setFormData] = useState({
         nombreApellido: '',
         celular: '',
@@ -13,6 +13,7 @@ const Carrito = () => {
         verificacionCorreo: ''
     });
     const [emailError, setEmailError] = useState('');
+    const [showButtons, setShowButtons] = useState(true); // Estado para controlar la visibilidad de los botones
 
     const calculateTotalPayment = () => {
         let totalPrice = 0;
@@ -25,6 +26,7 @@ const Carrito = () => {
     const handleFinalizarCompra = () => {
         if (validateForm()) {
             console.log("Compra finalizada");
+            setShowButtons(false); // Oculta los botones al finalizar la compra
         }
     };
 
@@ -50,6 +52,15 @@ const Carrito = () => {
         }
     };
 
+    // Función para limpiar el carrito y reiniciar el estado del formulario
+    const handleClearCart = () => {
+        // Limpiar carrito
+        // ...
+
+        // Reiniciar el estado del formulario
+        setShowForm(false);
+    };
+
     return (
         <div className="Carrito">
             <h2 className="CartTitle">Carrito de Compras</h2>
@@ -67,16 +78,25 @@ const Carrito = () => {
                                 <p className='DetailName'>Precio Unitario: ${product.price}</p>
                                 <p className='DetailName'>Cantidad: {product.quantity}</p>
                                 <p className='DetailName'>Precio Total: ${calculateTotalPrice(product)}</p>
-                                <button className="CartButton" onClick={() => removeFromCart(product.id)}>
-                                    Eliminar Producto
-                                </button>
+                                {showButtons && (
+                                    <button className="CartButton" onClick={() => removeFromCart(product.id)}>
+                                        Eliminar Producto
+                                    </button>
+                                )}
                             </div>
                         </div>
                     ))}
-                    <p className="TotalPayment">Total a Pagar: ${calculateTotalPayment()}</p>
-                    <button className="FinalizarCompraButton" onClick={() => setShowForm(true)}>
-                        Finalizar Compra
-                    </button>
+                    {showButtons && (
+                        <div>
+                            <p className="TotalPayment">Total a Pagar: ${calculateTotalPayment()}</p>
+                            <button className="FinalizarCompraButton" onClick={() => setShowForm(true)}>
+                                Finalizar Compra
+                            </button>
+                            <button className="ClearCartButton" onClick={handleClearCart}>
+                                Limpiar Carrito
+                            </button>
+                        </div>
+                    )}
                 </div>
             )}
             {showForm && (

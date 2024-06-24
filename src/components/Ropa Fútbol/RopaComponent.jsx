@@ -19,7 +19,6 @@ export default function RopaComponent() {
             <article className='card-container'>
                 {products.map(product => (
                     <ProductCard
-                        key={product.id}
                         title={product.title}
                         price={product.price}
                         description={product.description}
