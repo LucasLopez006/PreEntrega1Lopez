@@ -22,12 +22,12 @@ const handleSubmit = async (e) => {
         items: items,
         quantity: quantity,
         totalPrice: totalPrice
-        // Puedes agregar más campos según los datos que necesites capturar
+        
     };
 
     const orderId = await addOrderToFirestore(orderData);
     alert(`¡Orden creada con éxito! ID de orden: ${orderId}`);
-      // Aquí podrías redirigir al usuario a una página de confirmación o realizar otra acción después de crear la orden
+    
     } catch (error) {
     console.error('Error al crear la orden:', error);
     alert('Hubo un error al crear la orden. Inténtalo nuevamente.');

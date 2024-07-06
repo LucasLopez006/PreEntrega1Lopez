@@ -7,14 +7,14 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const calculateTotalPrice = (product) => {
-        const price = parseFloat(product.Price); // Asegúrate de usar Price en lugar de price si es el nombre del campo en Firebase
+        const price = parseFloat(product.Price); 
         const quantity = parseInt(product.quantity);
 
         if (isNaN(price) || isNaN(quantity)) {
             return 0; 
         }
 
-        return (price * quantity).toFixed(2); // Ajusta el formato del resultado según sea necesario
+        return (price * quantity).toFixed(2); 
     };
 
     const addToCart = (product) => {

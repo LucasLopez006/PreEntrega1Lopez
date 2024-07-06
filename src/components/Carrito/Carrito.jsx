@@ -28,7 +28,7 @@ const Carrito = () => {
 
     const handleFinalizarCompra = async () => {
         if (validateForm()) {
-            // Prepara los datos de la orden
+            
             const orderData = {
                 nombreApellido: formData.nombreApellido,
                 celular: formData.celular,
@@ -43,13 +43,13 @@ const Carrito = () => {
             };
 
             try {
-                // Agrega la orden a Firestore
+                
                 const orderId = await addOrderToFirestore(orderData);
                 console.log('Order ID:', orderId);
 
-                // Muestra mensaje de éxito o redirige a otra página
+                
                 alert(`¡Compra finalizada! Tu orden ha sido registrada con el ID: ${orderId}`);
-                setShowForm(false); // Opcional: cierra el formulario después de la compra
+                setShowForm(false); 
             } catch (error) {
                 console.error('Error al agregar orden a Firestore:', error);
                 alert('Hubo un error al finalizar la compra. Por favor, inténtalo nuevamente.');
@@ -80,7 +80,7 @@ const Carrito = () => {
     };
 
     const handleClearCart = () => {
-        setShowForm(false); // Opcional: cierra el formulario sin realizar la compra
+        setShowForm(false); 
     };
 
     return (
