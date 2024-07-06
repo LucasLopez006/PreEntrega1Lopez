@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import '/src/styles/navbar.css';
 import CartWidget from '../CartWidget.jsx';
 import { Link } from 'react-router-dom';
-import { searchProducts } from '../../asyncMock.js';
+import { searchProducts } from '../../firebase/firebase';
 import { CartContext } from '../CartContext.jsx';
 
 const NavBar = () => {
@@ -42,10 +42,10 @@ const NavBar = () => {
                     {results.length > 0 && (
                         <ul className="search-results">
                             {results.map(product => (
-                                <li key={product.id}>
+                                <li key={product.Id}>
                                     <Link to={`/product/${product.id}`}>
-                                        <img src={product.image} alt={product.title} width="50" height="50" />
-                                        <span>{product.title}</span>
+                                        <img src={product.Image} alt={product.Title} width="50" height="50" />
+                                        <span>{product.Title}</span>
                                     </Link>
                                 </li>
                             ))}

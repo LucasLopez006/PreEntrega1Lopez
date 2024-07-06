@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../CartContext';
+import Checkout from '../Checkout'; 
+import { addOrderToFirestore } from '../../firebase/firebase'; 
 import '../../styles/CartDetail.css';
 
 const Carrito = () => {
     const { cart, removeFromCart, calculateTotalPrice } = useContext(CartContext);
+
     const [showMessage, setShowMessage] = useState(false);
-    const [showForm, setShowForm] = useState(false); // Estado para controlar la visibilidad del formulario
+    const [showForm, setShowForm] = useState(false);
     const [formData, setFormData] = useState({
         nombreApellido: '',
         celular: '',
@@ -13,20 +16,44 @@ const Carrito = () => {
         verificacionCorreo: ''
     });
     const [emailError, setEmailError] = useState('');
-    const [showButtons, setShowButtons] = useState(true); // Estado para controlar la visibilidad de los botones
+    const [showButtons, setShowButtons] = useState(true);
 
     const calculateTotalPayment = () => {
         let totalPrice = 0;
         cart.forEach((product) => {
-            totalPrice += calculateTotalPrice(product);
+            totalPrice += parseFloat(calculateTotalPrice(product));
         });
-        return totalPrice.toFixed(2); 
+        return totalPrice.toFixed(2);
     };
 
-    const handleFinalizarCompra = () => {
+    const handleFinalizarCompra = async () => {
         if (validateForm()) {
-            console.log("Compra finalizada");
-            setShowButtons(false); // Oculta los botones al finalizar la compra
+            // Prepara los datos de la orden
+            const orderData = {
+                nombreApellido: formData.nombreApellido,
+                celular: formData.celular,
+                correo: formData.correo,
+                items: cart.map(product => ({
+                    id: product.id,
+                    title: product.Title,
+                    quantity: product.quantity,
+                    price: product.Price
+                })),
+                totalPayment: calculateTotalPayment()
+            };
+
+            try {
+                // Agrega la orden a Firestore
+                const orderId = await addOrderToFirestore(orderData);
+                console.log('Order ID:', orderId);
+
+                // Muestra mensaje de éxito o redirige a otra página
+                alert(`¡Compra finalizada! Tu orden ha sido registrada con el ID: ${orderId}`);
+                setShowForm(false); // Opcional: cierra el formulario después de la compra
+            } catch (error) {
+                console.error('Error al agregar orden a Firestore:', error);
+                alert('Hubo un error al finalizar la compra. Por favor, inténtalo nuevamente.');
+            }
         }
     };
 
@@ -52,13 +79,8 @@ const Carrito = () => {
         }
     };
 
-    // Función para limpiar el carrito y reiniciar el estado del formulario
     const handleClearCart = () => {
-        // Limpiar carrito
-        // ...
-
-        // Reiniciar el estado del formulario
-        setShowForm(false);
+        setShowForm(false); // Opcional: cierra el formulario sin realizar la compra
     };
 
     return (
@@ -71,11 +93,11 @@ const Carrito = () => {
                     {cart.map((product) => (
                         <div key={product.id} className="CartItem">
                             <div className="ProductImage">
-                                <img src={product.image} alt={product.title} />
+                                <img src={product.Image} alt={product.Title} />
                             </div>
                             <div className="ProductDetails">
-                                <h3>{product.title}</h3>
-                                <p className='DetailName'>Precio Unitario: ${product.price}</p>
+                                <h3>{product.Title}</h3>
+                                <p className='DetailName'>Precio Unitario: ${product.Price}</p>
                                 <p className='DetailName'>Cantidad: {product.quantity}</p>
                                 <p className='DetailName'>Precio Total: ${calculateTotalPrice(product)}</p>
                                 {showButtons && (

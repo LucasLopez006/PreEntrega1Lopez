@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProduct } from '../../asyncMock';
-import { CartContext } from "../CartContext.jsx";
-import "../../styles/detalles.css";
+import { getProductById } from '../../firebase/firebase';
+import { CartContext } from '../CartContext';
+import '../../styles/detalles.css';
 
-export default function ProdDetail() {
+export default function ProdDetails() {
     const [product, setProduct] = useState(null);
     const { prodId } = useParams();
     const [count, setCount] = useState(1);
@@ -14,9 +14,13 @@ export default function ProdDetail() {
 
     useEffect(() => {
         const fetchProduct = async () => {
-            const fetchedProduct = await getProduct(prodId);
-            setProduct(fetchedProduct);
-            setStockAvailable(fetchedProduct.stock);
+            try {
+                const fetchedProduct = await getProductById(prodId);
+                setProduct(fetchedProduct);
+                setStockAvailable(fetchedProduct.Stock);
+            } catch (error) {
+                console.error('Error fetching product:', error);
+            }
         };
 
         fetchProduct();
@@ -26,7 +30,7 @@ export default function ProdDetail() {
         if (product && count <= stockAvailable) {
             addToCart({ ...product, quantity: count });
             setStockAvailable(stockAvailable - count);
-            setAddedToCart(true);  
+            setAddedToCart(true);
         }
     };
 
@@ -39,10 +43,10 @@ export default function ProdDetail() {
             <h1>Detalles del producto:</h1>
             <article className='Detalles-container'>
                 <div className='Detalles-contenido'>
-                    <h2>{product.title}</h2>
-                    <img src={product.image} alt={product.title} />
-                    <h3>Precio: {product.price}</h3>
-                    <h4>Talles disponibles: {product.description}</h4>
+                    <h2>{product.Title}</h2>
+                    <img src={product.Image} alt={product.Title} />
+                    <h3>Precio: {product.Price}</h3>
+                    <h4>Talles disponibles: {product.Description}</h4>
                     <h5>Stock Disponible: {stockAvailable}</h5>
                     {stockAvailable === 0 ? (
                         <p>El stock está agotado, vuelve más tarde</p>

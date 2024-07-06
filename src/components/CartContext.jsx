@@ -1,5 +1,5 @@
+// CartContext.js
 import React, { createContext, useState } from 'react';
-import '../styles/detalles.css';
 
 export const CartContext = createContext();
 
@@ -7,14 +7,14 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const calculateTotalPrice = (product) => {
-        const price = parseFloat(product.price);
+        const price = parseFloat(product.Price); // Asegúrate de usar Price en lugar de price si es el nombre del campo en Firebase
         const quantity = parseInt(product.quantity);
 
         if (isNaN(price) || isNaN(quantity)) {
             return 0; 
         }
 
-        return price * quantity;
+        return (price * quantity).toFixed(2); // Ajusta el formato del resultado según sea necesario
     };
 
     const addToCart = (product) => {
@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
                     item.id === product.id ? { ...item, quantity: item.quantity + product.quantity } : item
                 );
             }
-            return [...prevCart, product];
+            return [...prevCart, { ...product, quantity: product.quantity }];
         });
     };
 

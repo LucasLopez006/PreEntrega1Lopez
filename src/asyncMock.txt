@@ -147,3 +147,15 @@ export const searchProducts = async (query) => {
 };
 
 
+
+export async function searchProducts(queryText) {
+  const q = query(collection(db, 'products'), where('Title', '>=', queryText), where('Title', '<=', queryText + '\uf8ff'));
+  const response = await getDocs(q);
+  const results = [];
+  response.forEach((docu) => {
+    const data = docu.data();
+    results.push({ id: docu.id, ...data });
+  });
+  return results;
+}
+
